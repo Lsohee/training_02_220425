@@ -6,9 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    body {
+      height:100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center ;
+      flex-direction: row;
+    }
+
     #root{
-      width:100vw;
-      height:100vh;
+      width:fit-content;
+      height:fit-content;
+      display: flex;
       background-color: #333;
 
     }
@@ -16,8 +25,9 @@
     #root>div{
       width:100px;
       height:100px;
-      border: 1px solid white;
-      color: white;
+      /* border: 1px solid white; */
+      background-color: white;
+      margin:10px;
     }
     
   </style>
@@ -27,35 +37,43 @@
   <div id="root">
 
 
-    <div>1</div>
-    <div>2</div>
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
   
   <script>
-    const root = document.getElementById("root");
-    const one = root.children[0]; //text node 에 문자열 1이라고 써놓은 놈
-    const two = root.children[1]; //text node 에 문자열 2라고 써놓은 놈
+    // const root = document.getElementById("root");
+    // const one = root.children[0]; //text node 에 문자열 1이라고 써놓은 놈
+    // const two = root.children[1]; //text node 에 문자열 2라고 써놓은 놈
 
-    two.textContent = "이건 두번째다!!"
+    // two.textContent = "이건 두번째다!!"
     
-    console.log(root);
-    console.dir(root);
-    console.dir(root.children[0]);
-    console.log(typeof two.textContent);
+    // console.log(root);
+    // console.dir(root);
+    // console.dir(root.children[0]);
+    // console.log(typeof two.textContent);
     
-    // event : 무슨일이 일어났다.
+    // // event : 무슨일이 일어났다.
 
-    one.addEventListener("wheel", function(){
-      two.textContent = "zmflgoTek dlshadk";
-      two.style.transition = "1s";
-      two.style.width = "200px";
-      two.style.backgroundColor = "salmon"
-      // 내 의도대로 안되서 값을 찾아봄 debugging
-      // 제대호 안써준 것
-      if(two.style.backgroundColor === "salmon"){
-        two.style.backgroundColor = "blue";
-      }
+    // one.addEventListener("wheel", function(){
+    //   two.textContent = "zmflgoTek dlshadk";
+    //   two.style.transition = "1s";
+    //   two.style.width = "200px";
+    //   two.style.backgroundColor = "salmon"
+    //   // 내 의도대로 안되서 값을 찾아봄 debugging
+    //   // 제대로 안써준 것
+    //   if(two.style.backgroundColor === "salmon"){
+    //     two.style.backgroundColor = "blue";
+    //   }
+    // });
+    const root = document.querySelector("#root");
+    const div = root.children[0];
+    div.addEventListener("click", function(){
+      root.style.flexDirection = "column";
     });
+    
+    
 
   </script>
   
